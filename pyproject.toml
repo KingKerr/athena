@@ -1,0 +1,27 @@
+[project]
+name = "athena"
+version = "0.1.0"
+description = "Voice-native market intelligence copilot with retrieval, citations, and ElevenLabs voice I/O."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.2",
+  "pytest-asyncio>=0.23.8",
+  "ruff>=0.6.2",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+pythonpath = ["apps/api/src"]
+testpaths = ["apps/api/tests"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
